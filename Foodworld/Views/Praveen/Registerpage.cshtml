@@ -1,0 +1,94 @@
+﻿
+@model Foodworld.models.Register
+@*<h1> register page </h1>
+<hr />
+
+
+<form method="post">
+    <label>Enter username</label>
+   @Html.TextBoxFor(c => c.Username);
+   <span @Html.TextBoxFor(c => c.Username)=Username></span> <br />  @*area where validation message will be displayed*@
+
+
+@*
+    <label>Enter password</label>
+ @Html.TextBoxFor(c=> c.Pwd)
+
+
+    <label>Enter DOB</label>
+  @Html.TextBoxFor(c=> c.Dob)
+
+
+    <label>Enter Email</label>
+   @Html.TextBoxFor(c=> c.Email)
+
+
+    <label>Select Gender</label>
+   @Html.RadioButtonFor(c=> c.Gender, true)
+   @Html.RadioButtonFor(c=> c.Gender, false)
+
+
+    <label>Enter Phone</label>
+   @Html.TextBoxFor(c=> c.Phone)
+
+    <label>Enter Nationality</label>
+  @Html.TextBoxFor(c=> c.Nationality)
+    <br /><br />
+
+    <input type="submit" value="Register" />
+
+</form>
+
+    @ViewData["a"]*@
+
+
+<h1>Register Page</h1>
+<hr />
+
+<div style="width:500px; margin-left:300px">
+<form method="post">
+    <label>Enter username</label>
+  <input type="text"  asp-for=Username class="form-control" />
+  <span asp-validation-for=Username></span> <br />  @*area where validation message will be displayed*@
+
+
+
+    <label>Enter password</label>
+ <input type="text" asp-for=Pwd  class="form-control"/> <br />
+ <span asp-validation-for=Pwd></span><br />
+
+
+
+    <label>Enter DOB</label>
+ <input type="date" asp-for=Dob class="form-control" /><br />
+
+
+    <label>Enter Email</label>
+ <input type="text" asp-for=Email class="form-control" /><br />
+  <span asp-validation-for=Email></span> <br />
+
+    <label>Select Gender</label>
+ <input type="radio" asp-for=Gender value="true" class="form-check-input"/>
+ <input type="radio" asp-for=Gender value="false" class="form-check-input"/><br />
+
+    <label>Enter Phone</label>
+   <input type="text" asp-for=Phone  class="form-control"/><br />
+    <span asp-validation-for=Phone></span><br />
+
+
+    <label>Enter Nationality</label>
+
+    <input type="text" asp-for=Nationality  class="form-control"/><br />
+  
+    <br /><br />
+
+    <input type="submit" value="Register" class="btn btn-primary"  />
+    
+
+</form>
+</div>
+<br />
+
+<div>
+    @ViewData["a"]
+

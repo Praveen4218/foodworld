@@ -1,0 +1,28 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+ @model IEnumerable<Foodworld.models.Menu>
+
+
+
+   
+
+    
+        @foreach(var item in Model)
+{
+    <div class="col-md-4">   
+         <img src="~/@item.Images" class ="card"><br>
+   <div>@item.Itemid</div>
+   <div>@item.Itemname</div>
+   <div>@item.Price</div>
+   <div>@item.Itemdesc</div>
+  <a asp-action="Addtocart"  asp-route-myitemid=@item.Itemid  
+  asp-route-myitemname=@item.Itemname asp-route-myitemprice=@item.Price 
+  asp-route-myitemimg=@item.Images class="btn btn-info">Addcart</a>
+   </div>
+  }
+          
+    
+    </div>
